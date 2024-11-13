@@ -21,7 +21,7 @@ public class BloggingContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
         var connectionString = "Server=localhost;Database=TestEfCoreProjectDatabase;User=root;Password=;";
-        options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+        options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0)));
     }
 }
 
